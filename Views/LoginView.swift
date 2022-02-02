@@ -30,7 +30,7 @@ struct LoginView: View {
                 
                 VStack(spacing: 16){
                     Picker(selection: $isLoginMode, label: Text("Picker here")) {
-                        Text("Login")
+                        Text("Log in")
                             .tag(true)
                         Text("Create account")
                             .tag(false)
@@ -64,7 +64,8 @@ struct LoginView: View {
                 }
                 .padding()
             }
-            .navigationTitle(isLoginMode ? "Log in" : "Create account")
+//            .navigationTitle(isLoginMode ? "Log in" : "Create account")
+            .navigationTitle("Calendar-buddy")
             .background(Color(.init(white: 0, alpha: 0.05)).ignoresSafeArea())
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -107,7 +108,7 @@ struct LoginView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentView_Previews1: PreviewProvider {
     static var previews: some View {
         LoginView()
     }

@@ -14,6 +14,8 @@
 		E047C7AB27AA3024004C8ACA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E047C7AA27AA3024004C8ACA /* GoogleService-Info.plist */; };
 		E047C7E427AA5898004C8ACA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E047C7E327AA5898004C8ACA /* FirebaseAuth */; };
 		E047C7E627AA5898004C8ACA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E047C7E527AA5898004C8ACA /* FirebaseStorage */; };
+		E0E264C027AB19FE00DF1D06 /* EventsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E264BF27AB19FE00DF1D06 /* EventsMainView.swift */; };
+		E0E264C227AB22C400DF1D06 /* CalendarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E264C127AB22C400DF1D06 /* CalendarsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		E047C79A27A23B38004C8ACA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E047C79D27A23B38004C8ACA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E047C7AA27AA3024004C8ACA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E0E264BF27AB19FE00DF1D06 /* EventsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsMainView.swift; sourceTree = "<group>"; };
+		E0E264C127AB22C400DF1D06 /* CalendarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,7 @@
 			children = (
 				E047C7AA27AA3024004C8ACA /* GoogleService-Info.plist */,
 				E047C79627A23B37004C8ACA /* calendar_buddyApp.swift */,
-				E047C79827A23B37004C8ACA /* LoginView.swift */,
+				E0E264BE27AAED9000DF1D06 /* Views */,
 				E047C79A27A23B38004C8ACA /* Assets.xcassets */,
 				E047C79C27A23B38004C8ACA /* Preview Content */,
 			);
@@ -72,6 +76,16 @@
 				E047C79D27A23B38004C8ACA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E0E264BE27AAED9000DF1D06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E047C79827A23B37004C8ACA /* LoginView.swift */,
+				E0E264BF27AB19FE00DF1D06 /* EventsMainView.swift */,
+				E0E264C127AB22C400DF1D06 /* CalendarsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +166,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E264C027AB19FE00DF1D06 /* EventsMainView.swift in Sources */,
 				E047C79927A23B37004C8ACA /* LoginView.swift in Sources */,
+				E0E264C227AB22C400DF1D06 /* CalendarsView.swift in Sources */,
 				E047C79727A23B37004C8ACA /* calendar_buddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
