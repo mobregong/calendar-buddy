@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EventsMainView: View {
+struct EventsView: View {
     
     enum Event: String, CaseIterable, Identifiable {
         case next, today, models
@@ -16,7 +16,7 @@ struct EventsMainView: View {
     @State private var EventMode: Event = .next
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ScrollView {
                 VStack(spacing: 16){
                     Picker("Mode", selection: $EventMode){
@@ -25,7 +25,7 @@ struct EventsMainView: View {
                         Text("Models").tag(Event.models)
                     }.pickerStyle(SegmentedPickerStyle())
                 }
-            }.navigationTitle("Calendar-buddy")
+//            }.navigationTitle("Calendar-buddy")
 //            .background(Color(.init(white: 0, alpha: 0.05)).ignoresSafeArea())
         }.navigationViewStyle(StackNavigationViewStyle())
     }
@@ -33,7 +33,7 @@ struct EventsMainView: View {
 
 struct EventsMainView_Previews: PreviewProvider {
     static var previews: some View {
-        EventsMainView()
+        EventsView()
     }
 }
 

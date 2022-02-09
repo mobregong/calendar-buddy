@@ -95,6 +95,7 @@ struct LoginView: View {
     }
     
     @State var loginStatusMessage = ""
+    
     private func createNewAccount() {
         FirebaseManager.shared.auth.createUser(withEmail: email, password: password) {result, err in
             if let err = err {

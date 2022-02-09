@@ -28,8 +28,8 @@ struct CalendarsView: View {
 //                            .font(.system(Font.TextStyle))
 //                            .padding(.trailing, 100)
 //                            style="text-align:left"
-                        .foregroundColor(.blue)
-                        .frame(width: 400, alignment: .leading)
+//                        .foregroundColor(.blue)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     
                     HStack {
                         TextField("Calendar link", text: $calendarLink)
@@ -47,7 +47,7 @@ struct CalendarsView: View {
                     }
                 }.padding()
             }
-            .navigationTitle("Calendar-buddy")
+            .navigationTitle("Calendars")
 //            .background(Color(.init(white: 0, alpha: 0.05)))
         }
         .navigationViewStyle(StackNavigationViewStyle())
