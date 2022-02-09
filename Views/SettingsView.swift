@@ -8,8 +8,59 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    @State var shouldShowLogOutOptions = false
+
+    private var customNavBar: some View {
+
+        HStack(spacing: 16) {
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Settings")
+                    .font(.system(size: 24, weight: .bold))
+            }
+
+            Spacer()
+        }
+    }
+
     var body: some View {
-        Text("Settings")
+        NavigationView {
+
+            VStack {
+                customNavBar
+                HStack {
+                    Text("Log out (click on gear)")
+                        .foregroundColor(.black)
+                    Spacer()
+                    
+                    Button {
+                        shouldShowLogOutOptions.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundColor(Color(.label))
+                    }
+                    .padding()
+                    .actionSheet(isPresented: $shouldShowLogOutOptions) {
+                        .init(title: Text("Settings"), message: Text("Are you sure?"), buttons: [
+                            .destructive(Text("Sign Out"), action: {
+                                print("handle sign out")
+                            }),
+                                .cancel()
+                        ])
+                    }
+                }
+//                .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
+                
+                
+            }
+//            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
+            
+//            .navigationBarHidden(true)
+        }
     }
 }
 
