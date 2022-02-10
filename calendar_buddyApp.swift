@@ -6,28 +6,18 @@
 //
 
 import SwiftUI
-import UIKit
 import Firebase
 
 @main
 struct calendar_buddyApp: App {
     var body: some Scene {
         WindowGroup {
-//            LoginView()
-            MainView()
+            LoginView()
+//            MainView()
         }
     }
 }
 
-class FirebaseManager: NSObject {
-    let auth: Auth
-    static let shared = FirebaseManager()
-    override init() {
-        FirebaseApp.configure()
-        self.auth = Auth.auth()
-        super.init()
-    }
-}
 
 ////@UIApplicationMain
 //class AppDelegate: UIResponder, UIApplicationDelegate {
