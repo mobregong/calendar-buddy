@@ -13,7 +13,8 @@ import Firebase
 struct calendar_buddyApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+//            LoginView()
+            MainView()
         }
     }
 }

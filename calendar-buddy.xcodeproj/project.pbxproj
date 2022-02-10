@@ -13,6 +13,7 @@
 		E047C79B27A23B38004C8ACA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E047C79A27A23B38004C8ACA /* Assets.xcassets */; };
 		E047C79E27A23B38004C8ACA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E047C79D27A23B38004C8ACA /* Preview Assets.xcassets */; };
 		E047C7AB27AA3024004C8ACA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E047C7AA27AA3024004C8ACA /* GoogleService-Info.plist */; };
+		E057C49927B46951005C592A /* CustomNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E057C49827B46951005C592A /* CustomNavBarView.swift */; };
 		E0763C7327B3659300162654 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0763C7227B3659300162654 /* SettingsView.swift */; };
 		E0B4B63E27B1FCD200E80A66 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E0B4B63D27B1FCD200E80A66 /* FirebaseAuth */; };
 		E0B4B64027B1FCD200E80A66 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E0B4B63F27B1FCD200E80A66 /* FirebaseFirestore */; };
@@ -31,6 +32,7 @@
 		E047C79A27A23B38004C8ACA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E047C79D27A23B38004C8ACA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E047C7AA27AA3024004C8ACA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E057C49827B46951005C592A /* CustomNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarView.swift; sourceTree = "<group>"; };
 		E0763C7227B3659300162654 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E0B4B64327B339B200E80A66 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E0B4B64527B33B2800E80A66 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				E0E264BF27AB19FE00DF1D06 /* EventsView.swift */,
 				E0018C9D27B3696600E80EC2 /* CategoriesView.swift */,
 				E0763C7227B3659300162654 /* SettingsView.swift */,
+				E057C49827B46951005C592A /* CustomNavBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				E0763C7327B3659300162654 /* SettingsView.swift in Sources */,
 				E0B4B64427B339B200E80A66 /* MainView.swift in Sources */,
 				E0B4B64627B33B2800E80A66 /* MenuView.swift in Sources */,
+				E057C49927B46951005C592A /* CustomNavBarView.swift in Sources */,
 				E0018C9E27B3696600E80EC2 /* CategoriesView.swift in Sources */,
 				E0E264C027AB19FE00DF1D06 /* EventsView.swift in Sources */,
 				E047C79927A23B37004C8ACA /* LoginView.swift in Sources */,
