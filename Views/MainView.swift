@@ -11,6 +11,9 @@ struct MainView: View {
     
     @State var showMenu = false
     
+    @State var shouldShowLogOutOptions = false
+    @ObservedObject private var um = UserModel()
+    
     var body: some View {
         
         let drag = DragGesture()
@@ -52,6 +55,30 @@ struct MainView: View {
                     }) {
                         Image(systemName: "line.horizontal.3")
                             .imageScale(.large)
+                    }
+                ), trailing:(
+                    Button {
+                        shouldShowLogOutOptions.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundColor(Color(.label))
+                    }
+                    .padding()
+                    .actionSheet(isPresented: $shouldShowLogOutOptions) {
+                        .init(title: Text("Settings"), message: Text("Are you sure?"), buttons: [
+                            .destructive(Text("Sign Out"), action: {
+                                print("handle sign out")
+                                um.handleSignOut()
+                            }),
+                                .cancel()
+                        ])
+                    }
+                    .fullScreenCover(isPresented: $um.isUserCurrentlyLoggedOut, onDismiss: nil) {
+                        LoginView(didCompleteLoginProcess: {
+                            self.um.isUserCurrentlyLoggedOut = false
+                            self.um.fetchCurrentUser()
+                        })
                     }
                 ))
         }
