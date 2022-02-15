@@ -26,48 +26,53 @@ struct SettingsView: View {
     }
 
     var body: some View {
-        NavigationView {
-
+//        NavigationView {
             VStack {
-                customNavBar
+                Text("Settings")
+                    .font(.system(size:28, weight: .bold))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    .padding(.bottom)
                 HStack {
                     Text("Log out (click on gear)")
                         .foregroundColor(.black)
                     Spacer()
                     
-//                    Button {
-//                        shouldShowLogOutOptions.toggle()
-//                    } label: {
-//                        Image(systemName: "gear")
-//                            .font(.system(size: 24, weight: .bold))
-//                            .foregroundColor(Color(.label))
-//                    }
+                    Button {
+                        shouldShowLogOutOptions.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundColor(Color(.label))
+                    }
 //                    .padding()
-//                    .actionSheet(isPresented: $shouldShowLogOutOptions) {
-//                        .init(title: Text("Settings"), message: Text("Are you sure?"), buttons: [
-//                            .destructive(Text("Sign Out"), action: {
-//                                print("handle sign out")
-//                                um.handleSignOut()
-//                            }),
-//                                .cancel()
-//                        ])
-//                    }
-//                    .fullScreenCover(isPresented: $um.isUserCurrentlyLoggedOut, onDismiss: nil) {
-//                        LoginView(didCompleteLoginProcess: {
-//                            self.um.isUserCurrentlyLoggedOut = false
-//                        })
-//                    }
+                    .actionSheet(isPresented: $shouldShowLogOutOptions) {
+                        .init(title: Text("Settings"), message: Text("Are you sure?"), buttons: [
+                            .destructive(Text("Sign Out"), action: {
+                                print("handle sign out")
+                                um.handleSignOut()
+                            }),
+                                .cancel()
+                        ])
+                    }
+                    .fullScreenCover(isPresented: $um.isUserCurrentlyLoggedOut, onDismiss: nil) {
+                        LoginView(didCompleteLoginProcess: {
+                            self.um.isUserCurrentlyLoggedOut = false
+                            self.um.fetchCurrentUser()
+                        })
+                    }
                 }
 //                .frame(maxWidth: .infinity, alignment: .leading)
                 Spacer()
-                
-                
             }
 //            .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
-            
 //            .navigationBarHidden(true)
-        }
+//            .navigationTitle("Settings")
+//            .background(Color(.init(white: 0, alpha: 0.05)))
+//        }
+//        .navigationBarTitle("Calendar Buddy", displayMode: .inline)
+//        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

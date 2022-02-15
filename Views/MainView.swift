@@ -10,9 +10,22 @@ import SwiftUI
 struct MainView: View {
     
     @State var showMenu = false
-    
     @State var shouldShowLogOutOptions = false
     @ObservedObject private var um = UserModel()
+    
+    init() {
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.configureWithOpaqueBackground()
+        coloredAppearance.backgroundColor = .init(white: 0, alpha: 0.05)
+//        coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+//        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+        
+//        UINavigationBar.appearance().tintColor = .white
+   }
     
     var body: some View {
         
@@ -28,25 +41,31 @@ struct MainView: View {
         return NavigationView {
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
-                    Button(action: {
-                        withAnimation {
-                           self.showMenu = true
-                        }
-                    }) {
-                        Text("Show Menu")
-                    }
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .offset(x: self.showMenu ? geometry.size.width/2 : 0)
-                        .disabled(self.showMenu ? true : false)
+//                    Button(action: {
+//                        withAnimation {
+//                           self.showMenu = true
+//                        }
+//                    }) {
+//                        Text("Show Menu")
+//                    }
+//                        .frame(width: geometry.size.width, height: geometry.size.height)
+//                        .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+//                        .disabled(self.showMenu ? true : false)
                     if self.showMenu {
                         MenuView()
                             .frame(width: geometry.size.width/2)
                             .transition(.move(edge: .leading))
                     }
+                    
+                    EventsView()
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                        .disabled(self.showMenu ? true : false)
+                    
                 }
                     .gesture(drag)
             }
-                .navigationBarTitle("Calendar Buddy", displayMode: .inline)
+            .navigationBarTitle("Calendar Buddy", displayMode: .inline)
                 .navigationBarItems(leading: (
                     Button(action: {
                         withAnimation {
@@ -56,50 +75,11 @@ struct MainView: View {
                         Image(systemName: "line.horizontal.3")
                             .imageScale(.large)
                     }
-                ), trailing:(
-                    Button {
-                        shouldShowLogOutOptions.toggle()
-                    } label: {
-                        Image(systemName: "gear")
-                            .font(.system(size: 24, weight: .bold))
-                            .foregroundColor(Color(.label))
-                    }
-                    .padding()
-                    .actionSheet(isPresented: $shouldShowLogOutOptions) {
-                        .init(title: Text("Settings"), message: Text("Are you sure?"), buttons: [
-                            .destructive(Text("Sign Out"), action: {
-                                print("handle sign out")
-                                um.handleSignOut()
-                            }),
-                                .cancel()
-                        ])
-                    }
-                    .fullScreenCover(isPresented: $um.isUserCurrentlyLoggedOut, onDismiss: nil) {
-                        LoginView(didCompleteLoginProcess: {
-                            self.um.isUserCurrentlyLoggedOut = false
-                            self.um.fetchCurrentUser()
-                        })
-                    }
+                
                 ))
         }
     }
 }
-
-//struct MainView: View {
-//
-////    @Binding var showMenu: Bool
-//    @State var showMenu = false
-//
-//    var body: some View {
-//        Button(action: {
-//            withAnimation {
-//               self.showMenu = true
-//            }
-//        }) {
-//            Text("Show Menu")
-//        }
-//    }
-//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

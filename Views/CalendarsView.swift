@@ -20,9 +20,12 @@ struct CalendarsView: View {
 //    private var cc = CalendarChooser(calendars: self.$eventsRepository.selectedCalendars, eventStore: self.eventsRepository.eventStore)
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ScrollView {
                 VStack(spacing: 16) {
+                    Text("Calendars")
+                        .font(.system(size:28, weight: .bold))
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     Picker(selection: $isConnectMode, label: Text("Picker here")) {
                         Text("Connect")
                             .tag(true)
@@ -31,24 +34,24 @@ struct CalendarsView: View {
                     }.pickerStyle(SegmentedPickerStyle())
 
                     if isConnectMode {
-                        Text("Apple Calendar")
-                            .font(.system(size:24, weight: .semibold))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        HStack {
-                            TextField("Calendar name", text: $calendarName)
-                                .autocapitalization(.none)
-                                .padding(12)
-                                .background(Color(.init(white: 0, alpha: 0.05)))
-                            Button {
-                                handleAppleCal ()
-                            } label: {
-                                Text("⏎")
-                                    .foregroundColor(.white)
-                                    .padding(12)
-                                    .font(.system(size:14, weight: .semibold))
-                            }.background(Color.blue)
-                        }
+//                        Text("Apple Calendar")
+//                            .font(.system(size:24, weight: .semibold))
+//                            .frame(maxWidth: .infinity, alignment: .leading)
+//
+//                        HStack {
+//                            TextField("Calendar name", text: $calendarName)
+//                                .autocapitalization(.none)
+//                                .padding(12)
+//                                .background(Color(.init(white: 0, alpha: 0.05)))
+//                            Button {
+//                                handleAppleCal ()
+//                            } label: {
+//                                Text("⏎")
+//                                    .foregroundColor(.white)
+//                                    .padding(12)
+//                                    .font(.system(size:14, weight: .semibold))
+//                            }.background(Color.blue)
+//                        }
                         
                         Text("Google Calendar")
                             .font(.system(size:24, weight: .semibold))
@@ -68,6 +71,8 @@ struct CalendarsView: View {
                                     .font(.system(size:14, weight: .semibold))
                             }.background(Color.blue)
                         }
+                        Text(self.calendarConnectMessage)
+                            .foregroundColor(.blue)
                     } else {
                         Text("Currently connected to:")
                             .font(.system(size:24, weight: .semibold))
@@ -88,16 +93,17 @@ struct CalendarsView: View {
                     }
                 }.padding()
             }
-            .navigationTitle("Calendars")
+//            .navigationTitle("Calendars")
 //            .background(Color(.init(white: 0, alpha: 0.05)))
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
+//        }
+//        .navigationBarTitle("Calendar Buddy", displayMode: .inline)
+//        .navigationViewStyle(StackNavigationViewStyle())
     }
     private func handleAppleCal () {
         print("Should register new Apple calendar")
     }
     private func handleGoogleCal () {
-        print("Should register new Google calendar link")
+//        print("Should register new Google calendar link")
 
 //        Get current user id
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
@@ -118,16 +124,20 @@ struct CalendarsView: View {
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
+                //        do not currently have working error message
                 print(error?.localizedDescription ?? "No data")
+                self.calendarConnectMessage = "Failed to connect to calendar"
                 return
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
                 print(responseJSON)
             }
+//            print("Successfully added calendar")
+//            this is printing every time
+            self.calendarConnectMessage = "Successfully added calendar"
         }
         task.resume()
-//        do not currently have an error message
     }
         
     private func handleRefresh () {

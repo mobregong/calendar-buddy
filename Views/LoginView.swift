@@ -127,17 +127,17 @@ struct LoginView: View {
                 
                 self.didCompleteLoginProcess()
             }
-        FirebaseManager.shared.firestore.collection("users").document(uid).collection("user_info")
-            .document("events").setData(["did this work":"yes"]) { err in
-                if let err = err {
-                    print(err)
-                    self.loginStatusMessage = "\(err)"
-                    return
-                }
-                print("Success")
-                
-                self.didCompleteLoginProcess()
-            }
+//        FirebaseManager.shared.firestore.collection("users").document(uid).collection("user_info")
+//            .document("events").setData(["did this work":"yes"]) { err in
+//                if let err = err {
+//                    print(err)
+//                    self.loginStatusMessage = "\(err)"
+//                    return
+//                }
+//                print("Success")
+//
+//                self.didCompleteLoginProcess()
+//            }
     }
     
 }

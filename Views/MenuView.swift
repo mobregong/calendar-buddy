@@ -17,14 +17,14 @@ struct MenuView: View {
                     .font(.headline)
             }
             .padding(.top, 100)
-            NavigationLink(destination: EventsView()) {
-                Text("Events")
-                    .foregroundColor(.gray)
-                    .font(.headline)
-            }
+//            NavigationLink(destination: EventsView()) {
+//                Text("Events")
+//                    .foregroundColor(.gray)
+//                    .font(.headline)
+//            }
             .padding(.top, 30)
-            NavigationLink(destination: CategoriesView()) {
-                Text("Categories")
+            NavigationLink(destination: RemindersView()) {
+                Text("Reminders")
                     .foregroundColor(.gray)
                     .font(.headline)
             }

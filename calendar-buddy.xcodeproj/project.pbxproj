@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E0018C9E27B3696600E80EC2 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0018C9D27B3696600E80EC2 /* CategoriesView.swift */; };
+		E0018C9E27B3696600E80EC2 /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0018C9D27B3696600E80EC2 /* RemindersView.swift */; };
 		E047C79727A23B37004C8ACA /* calendar_buddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E047C79627A23B37004C8ACA /* calendar_buddyApp.swift */; };
 		E047C79927A23B37004C8ACA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E047C79827A23B37004C8ACA /* LoginView.swift */; };
 		E047C79B27A23B38004C8ACA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E047C79A27A23B38004C8ACA /* Assets.xcassets */; };
 		E047C79E27A23B38004C8ACA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E047C79D27A23B38004C8ACA /* Preview Assets.xcassets */; };
 		E047C7AB27AA3024004C8ACA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E047C7AA27AA3024004C8ACA /* GoogleService-Info.plist */; };
-		E057C49927B46951005C592A /* CustomNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E057C49827B46951005C592A /* CustomNavBarView.swift */; };
 		E057C49B27B4BD94005C592A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E057C49A27B4BD93005C592A /* UserModel.swift */; };
 		E057C49D27B4BE0E005C592A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E057C49C27B4BE0E005C592A /* FirebaseManager.swift */; };
 		E057C4A027B4C0E4005C592A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E057C49F27B4C0E4005C592A /* FirebaseAuth */; };
@@ -27,14 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E0018C9D27B3696600E80EC2 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		E0018C9D27B3696600E80EC2 /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
 		E047C79327A23B37004C8ACA /* calendar-buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "calendar-buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E047C79627A23B37004C8ACA /* calendar_buddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendar_buddyApp.swift; sourceTree = "<group>"; };
 		E047C79827A23B37004C8ACA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E047C79A27A23B38004C8ACA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E047C79D27A23B38004C8ACA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E047C7AA27AA3024004C8ACA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E057C49827B46951005C592A /* CustomNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarView.swift; sourceTree = "<group>"; };
 		E057C49A27B4BD93005C592A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E057C49C27B4BE0E005C592A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		E0763C7227B3659300162654 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -99,14 +97,13 @@
 		E0E264BE27AAED9000DF1D06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E047C79827A23B37004C8ACA /* LoginView.swift */,
 				E0B4B64327B339B200E80A66 /* MainView.swift */,
 				E0B4B64527B33B2800E80A66 /* MenuView.swift */,
 				E0E264C127AB22C400DF1D06 /* CalendarsView.swift */,
-				E047C79827A23B37004C8ACA /* LoginView.swift */,
 				E0E264BF27AB19FE00DF1D06 /* EventsView.swift */,
-				E0018C9D27B3696600E80EC2 /* CategoriesView.swift */,
+				E0018C9D27B3696600E80EC2 /* RemindersView.swift */,
 				E0763C7227B3659300162654 /* SettingsView.swift */,
-				E057C49827B46951005C592A /* CustomNavBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,9 +190,8 @@
 				E0763C7327B3659300162654 /* SettingsView.swift in Sources */,
 				E0B4B64427B339B200E80A66 /* MainView.swift in Sources */,
 				E0B4B64627B33B2800E80A66 /* MenuView.swift in Sources */,
-				E057C49927B46951005C592A /* CustomNavBarView.swift in Sources */,
 				E057C49D27B4BE0E005C592A /* FirebaseManager.swift in Sources */,
-				E0018C9E27B3696600E80EC2 /* CategoriesView.swift in Sources */,
+				E0018C9E27B3696600E80EC2 /* RemindersView.swift in Sources */,
 				E0E264C027AB19FE00DF1D06 /* EventsView.swift in Sources */,
 				E047C79927A23B37004C8ACA /* LoginView.swift in Sources */,
 				E0E264C227AB22C400DF1D06 /* CalendarsView.swift in Sources */,
