@@ -140,15 +140,15 @@ struct EventsView: View {
         }
         task.resume()
     }
-    func jsonToString(json: AnyObject){
-        do {
-            let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted) // first of all convert json to the data
-            let convertedString = String(data: data1, encoding: String.Encoding.utf8) // the data will be converted to the string
-            print(convertedString ?? "defaultvalue")
-        } catch let myJSONError {
-            print(myJSONError)
-        }
-    }
+//    func jsonToString(json: AnyObject){
+//        do {
+//            let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted) // first of all convert json to the data
+//            let convertedString = String(data: data1, encoding: String.Encoding.utf8) // the data will be converted to the string
+//            print(convertedString ?? "defaultvalue")
+//        } catch let myJSONError {
+//            print(myJSONError)
+//        }
+//    }
 }
 
 struct EventsMainView_Previews: PreviewProvider {
