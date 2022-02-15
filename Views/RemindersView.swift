@@ -63,7 +63,7 @@ struct RemindersView: View {
                     dateInfo.hour = 01
                     dateInfo.minute = 26
 
-                    // show this notification five seconds from now
+                    // show this notification at specific date above
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
 
                     // choose a random identifier
@@ -71,6 +71,13 @@ struct RemindersView: View {
 
                     // add our notification request
                     UNUserNotificationCenter.current().add(request)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top)
+//                .padding(.bottom)
+                
+                Button("Schedule basic notification for all events") {
+                    set_notifications()
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top)
@@ -120,7 +127,58 @@ struct RemindersView: View {
 //        .navigationViewStyle(StackNavigationViewStyle())
     }
     private func set_notifications() {
+//        Should refresh events
+//        handleGoogleCal ()
+        
         print("should set notifications")
+        
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        
+        FirebaseManager.shared.firestore.collection("users").document(uid).collection("user_info").getDocuments(){ (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+//                        print("\(document.documentID) => \(document.data())")
+//                        print("\(document.data())")
+//                        self.todayResponse += ("\(document.data())")
+//                        print(type(of: self.todayResponse))
+                    
+                    let name = document.documentID
+                    let data = document.data()
+                    let day = (data["day"] as! NSString).doubleValue
+                    let month = (data["month"] as! NSString).doubleValue
+                    let year = (data["year"] as! NSString).doubleValue
+                    let hour = (data["hour"] as! NSString).doubleValue
+                    let minute = (data["minute"] as! NSString).doubleValue
+//                    let location = data["location"]
+//                    let description = data["description"]
+//
+
+                    let content = UNMutableNotificationContent()
+                    content.title = name
+//                    content.subtitle = (description as? String ?? "Empty" )
+                    content.sound = UNNotificationSound.default
+//
+//                    // specify data
+                    var dateInfo = DateComponents()
+                    dateInfo.day = Int(day)
+                    dateInfo.month = Int(month)
+                    dateInfo.year = Int(year)
+                    dateInfo.hour = Int(hour)
+                    dateInfo.minute = Int(minute)
+//
+//                    // show this notification five seconds from now
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
+//
+//                    // choose a random identifier
+                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+//
+//                    // add our notification request
+                    UNUserNotificationCenter.current().add(request)
+                }
+            }
+        }
     }
 }
 
