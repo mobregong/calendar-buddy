@@ -34,6 +34,7 @@ Calendar Buddy
 - Google Firebase
 - Flask API
 	- Located at https://github.com/mobregong/calendar-buddy-back-end.git
+	- Not yet deployed (please let me know if you would like me to run the server)
 
 ## Database
 - Google Firestore
