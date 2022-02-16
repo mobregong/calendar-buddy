@@ -6,10 +6,10 @@ back-end for this project is in https://github.com/mobregong/calendar-buddy-back
 Calendar Buddy
 	
 ## Learning Goals
-• Build a full-stack app
-• Firebase
-• Swift/SwiftUI
-• Working with different APIs
+- Build a full-stack app
+- Firebase
+- Swift/SwiftUI
+- Working with different APIs
 
 ## Project Description
 - People with ADHD and other types of neurodiveristy often struggle with time blindness and object permanence. 
@@ -28,13 +28,13 @@ Calendar Buddy
 	- Users can easily see a focused display of their next event or the current day's events
 
 ## Main Front-end Technologies
-• Swift - IOS
+- Swift/SwiftUI
 
 ## Main Back-end Technologies
-• Google Firebase
-• Flask API
-	○ Located at https://github.com/mobregong/calendar-buddy-back-end.git
+- Google Firebase
+- Flask API
+	- Located at https://github.com/mobregong/calendar-buddy-back-end.git
 
 ## Database
-• Google Firestore
+- Google Firestore
 
