@@ -33,5 +33,4 @@ MAIN BACK-END TECHNOLOGY
 
 DATABASE
 • Google Firestore
- 
-![image](https://user-images.githubusercontent.com/82339052/154168495-f5253378-f01e-44e1-a040-74d8631733ea.png)
+
