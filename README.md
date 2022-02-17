@@ -12,10 +12,10 @@ Calendar Buddy
 - Working with different APIs
 
 ## Project Description
-- People with ADHD and other types of neurodiveristy often struggle with time blindness and object permanence. 
+- People with ADHD and other types of neurodiversity often struggle with time blindness and object permanence. 
   These qualities present three main challenges: 
 	- Being on time for events
-	- Preparing for things that are in the future past idividuals' time horizons
+	- Preparing for things that are in the future (past individual's time horizon)
 	- Gauging how long task will take to complete
 - This app aims to tackle the first challenge by automatically creating customizable event reminders
 
